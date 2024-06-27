@@ -433,6 +433,9 @@ Index.checkVersion = function () {
  * Fetch the latest LRR changelog and show it to the user if he just updated
  */
 Index.fetchChangelog = function () {
+    if (true) {
+        return;
+    }
     if (localStorage.lrrVersion !== Index.serverVersion) {
         localStorage.lrrVersion = Index.serverVersion;
 
