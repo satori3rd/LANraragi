@@ -763,17 +763,18 @@ Reader.initializeArchiveOverlay = function () {
 };
 
 Reader.changePage = function (targetPage) {
-    let destination;
+    let destination, mangaMode = false;
+    // Reader.mangaMode
     if (targetPage === "first") {
-        destination = Reader.mangaMode ? Reader.maxPage : 0;
+        destination = mangaMode ? Reader.maxPage : 0;
     } else if (targetPage === "last") {
-        destination = Reader.mangaMode ? 0 : Reader.maxPage;
+        destination = mangaMode ? 0 : Reader.maxPage;
     } else {
         let offset = targetPage;
         if (Reader.doublePageMode && !Reader.showingSinglePage && Reader.currentPage > 0) {
             offset *= 2;
         }
-        destination = Reader.currentPage + (Reader.mangaMode ? -offset : offset);
+        destination = Reader.currentPage + (mangaMode ? -offset : offset);
     }
     Reader.goToPage(destination);
 };
