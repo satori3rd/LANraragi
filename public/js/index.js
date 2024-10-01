@@ -414,16 +414,16 @@ Index.checkVersion = function () {
                 }
             });
 
-            if (latestVersion > currentVersion) {
-                LRR.toast({
-                    heading: `A new version of LANraragi (${data.tag_name}) is available !`,
-                    text: `<a href="${data.html_url}">Click here to check it out.</a>`,
-                    icon: "info",
-                    closeOnClick: false,
-                    draggable: false,
-                    hideAfter: 7000,
-                });
-            }
+            // if (latestVersion > currentVersion) {
+            //     LRR.toast({
+            //         heading: `A new version of LANraragi (${data.tag_name}) is available !`,
+            //         text: `<a href="${data.html_url}">Click here to check it out.</a>`,
+            //         icon: "info",
+            //         closeOnClick: false,
+            //         draggable: false,
+            //         hideAfter: 7000,
+            //     });
+            // }
         })
         // eslint-disable-next-line no-console
         .catch((error) => console.log("Error checking latest version.", error));
